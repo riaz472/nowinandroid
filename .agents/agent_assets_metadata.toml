@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "-F62xbFyYm628nPKCL9h9"
+uri = "file://ShelterApp_Ready.zip"
+type = "unspecified"
+title = "ShelterApp - Codemagic Ready (2.9MB)"
