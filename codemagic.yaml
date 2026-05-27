@@ -14,7 +14,8 @@ workflows:
             --no-daemon \
             --stacktrace \
             -Dorg.gradle.configuration-cache=false \
-            -Dorg.gradle.caching=false
+            -Dorg.gradle.caching=false \
+            -Pandroid.injected.testOnly=false
     artifacts:
       - app/build/outputs/apk/demo/debug/*.apk
     publishing:

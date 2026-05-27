@@ -11,4 +11,10 @@ title = "ShelterApp Fixed - Free Plan Ready (2.9MB)"
 id = "XWMOItCj4kp4QWNPvJRY1"
 uri = "file://codemagic.yaml"
 type = "unspecified"
-title = "codemagic.yaml - Fixed for NowInAndroid"
+title = "codemagic.yaml — Updated (root mein rakhna)"
+
+[[outputs]]
+id = "AoKUGoLeyOJkCid-uD2CR"
+uri = "file://app/google-services.json"
+type = "unspecified"
+title = "google-services.json — Fixed (app folder mein rakhna)"

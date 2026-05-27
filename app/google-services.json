@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "YourProjectId",
-    "project_id": "abc",
-    "storage_bucket": "abc"
+    "project_number": "000000000000",
+    "project_id": "nowinandroid-demo",
+    "storage_bucket": "nowinandroid-demo.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "Your:App:Id",
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000001",
         "android_client_info": {
           "package_name": "com.google.samples.apps.nowinandroid"
         }
@@ -26,7 +26,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "Your:App:Id",
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000002",
         "android_client_info": {
           "package_name": "com.google.samples.apps.nowinandroid.demo.debug"
         }
@@ -45,7 +45,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "Your:App:Id",
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000003",
         "android_client_info": {
           "package_name": "com.google.samples.apps.nowinandroid.demo.benchmark"
         }
@@ -64,7 +64,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "Your:App:Id",
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000004",
         "android_client_info": {
           "package_name": "com.google.samples.apps.nowinandroid.benchmark"
         }
@@ -83,7 +83,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "Your:App:Id",
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000005",
         "android_client_info": {
           "package_name": "com.google.samples.apps.nowinandroid.debug"
         }
@@ -102,7 +102,7 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "Your:App:Id",
+        "mobilesdk_app_id": "1:000000000000:android:0000000000000006",
         "android_client_info": {
           "package_name": "com.google.samples.apps.nowinandroid.demo"
         }
@@ -120,6 +120,5 @@
       }
     }
   ],
-
   "configuration_version": "1"
 }
