@@ -8,14 +8,78 @@ workflows:
       - name: Make gradlew executable
         script: |
           chmod +x gradlew
+
+      - name: Create google-services.json
+        script: |
+          cat > app/google-services.json << 'GSEOF'
+          {
+            "project_info": {
+              "project_number": "000000000000",
+              "project_id": "nowinandroid-demo",
+              "storage_bucket": "nowinandroid-demo.appspot.com"
+            },
+            "client": [
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:000000000000:android:0000000000000001",
+                  "android_client_info": {
+                    "package_name": "com.google.samples.apps.nowinandroid"
+                  }
+                },
+                "oauth_client": [],
+                "api_key": [{ "current_key": "AIzaSyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" }],
+                "services": { "appinvite_service": { "other_platform_oauth_client": [] } }
+              },
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:000000000000:android:0000000000000002",
+                  "android_client_info": {
+                    "package_name": "com.google.samples.apps.nowinandroid.demo.debug"
+                  }
+                },
+                "oauth_client": [],
+                "api_key": [{ "current_key": "AIzaSyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" }],
+                "services": { "appinvite_service": { "other_platform_oauth_client": [] } }
+              },
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:000000000000:android:0000000000000003",
+                  "android_client_info": {
+                    "package_name": "com.google.samples.apps.nowinandroid.demo"
+                  }
+                },
+                "oauth_client": [],
+                "api_key": [{ "current_key": "AIzaSyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" }],
+                "services": { "appinvite_service": { "other_platform_oauth_client": [] } }
+              },
+              {
+                "client_info": {
+                  "mobilesdk_app_id": "1:000000000000:android:0000000000000004",
+                  "android_client_info": {
+                    "package_name": "com.google.samples.apps.nowinandroid.debug"
+                  }
+                },
+                "oauth_client": [],
+                "api_key": [{ "current_key": "AIzaSyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" }],
+                "services": { "appinvite_service": { "other_platform_oauth_client": [] } }
+              }
+            ],
+            "configuration_version": "1"
+          }
+          GSEOF
+
       - name: Build Demo Debug APK
         script: |
           ./gradlew :app:assembleDemoDebug \
             --no-daemon \
             --stacktrace \
+            --info \
             -Dorg.gradle.configuration-cache=false \
             -Dorg.gradle.caching=false \
-            -Pandroid.injected.testOnly=false
+            -x dependencyGuard \
+            -x dependencyGuardBaseline \
+            -x validateBaselineProfile \
+            -x generateBaselineProfile
     artifacts:
       - app/build/outputs/apk/demo/debug/*.apk
     publishing:
