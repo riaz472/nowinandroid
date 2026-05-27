@@ -1,21 +1,22 @@
 workflows:
   android-debug-build:
-    name: Shelter Debug APK
-    max_build_duration: 60
+    name: NowInAndroid Debug APK
+    max_build_duration: 90
     environment:
       java: 17
     scripts:
-      - name: Set up Git submodules
-        script: |
-          git submodule update --init --recursive
       - name: Make gradlew executable
         script: |
           chmod +x gradlew
-      - name: Build Debug APK
+      - name: Build Demo Debug APK
         script: |
-          ./gradlew assembleDebug --stacktrace
+          ./gradlew :app:assembleDemoDebug \
+            --no-daemon \
+            --stacktrace \
+            -Dorg.gradle.configuration-cache=false \
+            -Dorg.gradle.caching=false
     artifacts:
-      - app/build/outputs/apk/debug/*.apk
+      - app/build/outputs/apk/demo/debug/*.apk
     publishing:
       email:
         recipients:
